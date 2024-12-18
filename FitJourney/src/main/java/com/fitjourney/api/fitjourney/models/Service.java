@@ -11,20 +11,20 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
-public class User {
+@Table(name = "services")
+public class Service {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String name;
 
-    @Column(nullable = false)
-    private String password;
+    private String description;
 
-    @Column(unique = true, nullable = false)
-    private String email;
+    private Double price;
 
-    private String phone;
+    private String duration;
+
+    private String type;
 }
