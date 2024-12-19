@@ -1,5 +1,6 @@
 package com.fitjourney.api.fitjourney.services;
 
+import com.fitjourney.api.fitjourney.exceptions.EntityNotFoundException;
 import com.fitjourney.api.fitjourney.repositories.ServiceRepository;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,7 @@ public class ServiceServiceImpl implements ServiceService {
         if (serviceRepository.existsById(id)) {
             serviceRepository.deleteById(id);
         } else {
-            throw new RuntimeException("Service not found with id: " + id);
+            throw new EntityNotFoundException("Service with id " + id + " not found");
         }
     }
 }
